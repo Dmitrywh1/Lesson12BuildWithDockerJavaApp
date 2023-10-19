@@ -2,11 +2,13 @@ version: '3'
 services:
   build:
     build:
-      context: ./build
+      context: ./Build
       dockerfile: Dockerfile
     image: build
     ports:
       - "8011:8080"
+    depends_on:
+      - db
   db:
     image: mysql:5.7
     environment:
