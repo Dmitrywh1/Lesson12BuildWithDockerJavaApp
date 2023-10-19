@@ -10,9 +10,9 @@ services:
   db:
     image: mysql:5.7
     environment:
-      - MYSQL_ROOT_PASSWORD: 'jc31d2qyy7h9jv5jn1u9uosjksxzaizw'
-      - MYSQL_DATABASE: 'dd'
-      - MYSQL_USER: 'acp4pogynvaeidfj'
+      MYSQL_ROOT_PASSWORD: 'jc31d2qyy7h9jv5jn1u9uosjksxzaizw'
+      MYSQL_DATABASE: 'dd'
+      MYSQL_USER: 'acp4pogynvaeidfj'
     ports:
       - "8514:8514"
     volumes:
