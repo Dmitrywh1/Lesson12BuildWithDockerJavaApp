@@ -4,7 +4,7 @@ RUN apt install maven -y
 RUN apt install openjdk-11-jdk -y
 RUN apt install git -y
 RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
-RUN cd hello-world/ && mvn package
+RUN cd App42PaaS-Java-MySQL-Sample/ && mvn package
 
 FROM tomcat:9.0.8-jre8-alpine
-COPY --from=build hello-world/webapp/target/webapp.war /usr/local/tomcat/webapps
+COPY --from=build /home/dmitry/App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
