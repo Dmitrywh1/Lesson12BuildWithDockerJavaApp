@@ -4,9 +4,9 @@ RUN apt install maven -y
 RUN apt install openjdk-11-jdk -y
 RUN apt install git -y
 RUN git clone https://github.com/Dmitrywh1/Lesson12Repo.git
-RUN cd App42PaaS-Java-MySQL-Sample/ && mvn package
+RUN cd Lesson12Repo/ && mvn package
 
 FROM tomcat:9.0.8-jre8-alpine
-COPY --from=build App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
+COPY --from=build Lesson12Repo/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
 RUN mkdir /usr/local/tomcat/ROOTЕ
-COPY --from=build App42PaaS-Java-MySQL-Sample/WebContent/Config.properties /usr/local/tomcat/ROOT/
+COPY --from=build Lesson12Repo/WebContent/Config.properties /usr/local/tomcat/ROOT/
