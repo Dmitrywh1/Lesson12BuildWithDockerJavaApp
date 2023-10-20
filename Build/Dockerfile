@@ -1,8 +1,6 @@
 FROM ubuntu:18.04 as build
 RUN apt-get update
-RUN apt install maven -y
-RUN apt install openjdk-11-jdk -y
-RUN apt install git -y
+RUN apt install openjdk-11-jdk git maven -y
 RUN git clone https://github.com/Dmitrywh1/Lesson12Repo.git
 RUN cd Lesson12Repo/ && mvn package
 
