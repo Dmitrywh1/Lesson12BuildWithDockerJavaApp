@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     image: build
     ports:
-      - "8015:8080"
+      - "8016:8080"
     depends_on:
       - mysqltest
 
