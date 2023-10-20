@@ -8,8 +8,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: test
     ports:
-      - "3309
-      :3306"
+      - "3309:3306"
     expose:
       - "3306"
     volumes:
