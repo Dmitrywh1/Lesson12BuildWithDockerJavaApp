@@ -1,15 +1,5 @@
 version: '3'
 services:
-  build:
-    build:
-      context: ./Build
-      dockerfile: Dockerfile
-    image: build
-    ports:
-      - "8013:8080"
-    depends_on:
-      - mysqltest
-
   mysqltest:
     image: mysql:5.7
     environment:
@@ -18,8 +8,18 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: test
     ports:
-      - "3307:3306"
+      - "3308:3306"
     expose:
       - "3306"
     volumes:
       - ./data:/var/lib/mysql
+  buildd:
+    build:
+      context: ./Build
+      dockerfile: Dockerfile
+    image: build
+    ports:
+      - "8015:8080"
+    depends_on:
+      - mysqltest
+
