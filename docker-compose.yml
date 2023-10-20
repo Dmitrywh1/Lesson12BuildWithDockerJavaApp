@@ -11,7 +11,7 @@ services:
       - mysqldb
 
   mysqldb:
-    image: mysql:5.7
+    image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: test
@@ -20,5 +20,3 @@ services:
       - "8001:3306"
     expose:
       - "3306"
-    volumes:
-      - ./mysql-data:/var/lib/mysql/
