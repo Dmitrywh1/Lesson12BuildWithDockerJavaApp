@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt install maven -y
 RUN apt install openjdk-11-jdk -y
 RUN apt install git -y
-RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
+RUN git clone https://github.com/Dmitrywh1/Lesson12Repo.git
 RUN cd App42PaaS-Java-MySQL-Sample/ && mvn package
 
 FROM tomcat:9.0.8-jre8-alpine
