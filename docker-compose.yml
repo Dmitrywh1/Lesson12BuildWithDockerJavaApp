@@ -5,6 +5,10 @@ services:
       context: ./Build
       dockerfile: Dockerfile
     image: build
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/test
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: test
     ports:
       - "8011:8080"
     depends_on:
@@ -13,10 +17,10 @@ services:
   mysqldb:
     image: mysql:5.7
     environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: test
       MYSQL_USER: user
       MYSQL_PASSWORD: test
-      MYSQL_ROOT_PASSWORD: test
     ports:
       - "3307:3306"
     volumes:
