@@ -7,15 +7,20 @@ services:
     image: build
     ports:
       - "8011:8080"
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: test
+      MYSQL_PORT: 3306
     depends_on:
       - db
-  db:
+
+  mysqldb:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: 'jc31d2qyy7h9jv5jn1u9uosjksxzaizw'
-      MYSQL_DATABASE: 'dd'
-      MYSQL_USER: 'acp4pogynvaeidfj'
+      MYSQL_DATABASE: test
+      MYSQL_PASSWORD: test
     ports:
-      - "8514:8514"
+      - "3307:3306"
     volumes:
       - ./mysql-data:/var/lib/mysql
