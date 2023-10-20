@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: test
       MYSQL_PORT: 3306
     depends_on:
-      - db
+      - mysqldb
 
   mysqldb:
     image: mysql:5.7
