@@ -10,7 +10,7 @@ services:
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: test
     ports:
-      - "8011:8080"
+      - "8013:8080"
     depends_on:
       - mysqldb
 
