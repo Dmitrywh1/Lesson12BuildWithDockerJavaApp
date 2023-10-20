@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     image: build
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/test
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3307/test
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: test
     ports:
